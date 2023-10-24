@@ -1,20 +1,14 @@
-# Použijete oficiální Node.js obraz s konkrétní verzí (21 je neexistující verze, zvolte platnou verzi)
-FROM node:21
+# Použití oficiálního Node.js obrazu s LTS verzí pro vývoj
+FROM node:18-alpine3.17
 
-# Nastavíte pracovní adresář v kontejneru
+# Vytvoření adresáře pro aplikaci v kontejneru
 WORKDIR /app
 
-# Kopírujete package.json a package-lock.json (pokud existuje) do kontejneru
+# Zkopírování souborů package.json a package-lock.json pro efektivní instalaci závislostí
 COPY package*.json ./
 
-# Spustíte npm ci pro rychlou a konzistentní instalaci závislostí
-RUN npm ci
+# Instalace závislostí (včetně devDependencies, protože jste v režimu vývoje)
+RUN npm install
 
-# Kopírujete zbytek projektu do kontejneru
-COPY . .
-
-# Spustíte příkaz pro sestavení projektu (např. npm run build)
-RUN npm run build
-
-# Definujete příkaz pro spuštění aplikace (např. npm start)
-CMD ["npm", "start"]
+# Spuštění vývojového serveru Next.js
+CMD ["npm", "run", "dev"]

@@ -4,11 +4,11 @@
 # If you need more help, visit the Dockerfile reference guide at
 # https://docs.docker.com/engine/reference/builder/
 
-ARG NODE_VERSION=18-alpine3.17
+ARG NODE_VERSION=18
 
 ################################################################################
 # Use node image for base image for all stages.
-FROM node:${NODE_VERSION} as base
+FROM node:${NODE_VERSION}-alpine as base
 
 # Set working directory for all build stages.
 WORKDIR /usr/src/app

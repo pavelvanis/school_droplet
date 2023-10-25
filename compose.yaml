@@ -9,14 +9,19 @@
 # https://github.com/docker/awesome-compose
 services:
   server:
+    platform: linux/amd64/v2
     build:
-      dockerfile: Dockerfile.production
+      context: .
+    image: next-prod
+    container_name: next-co
     environment:
       NODE_ENV: production
     ports:
       - 3000:3000
     volumes:
       - ./public:/usr/src/app/public
+
+
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to

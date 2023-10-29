@@ -18,7 +18,11 @@ const config: Config = {
       center: true
     },
     colors: {
-      primary: '#2f5491',
+      primary: {
+        DEFAULT: '#2f5491',
+        500: '#0c377d',
+      },
+      'dark-primary': '#0c377d',
       'font-primary': '#dddddd',
     },
     extend: {

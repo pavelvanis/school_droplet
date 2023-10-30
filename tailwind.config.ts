@@ -13,17 +13,24 @@ const config: Config = {
         DEFAULT: '0',
         md: '5rem',
         xl: '8rem',
-        '2xl': '12rem',
+        '2xl': '10rem',
       },
       center: true
     },
     colors: {
       primary: {
-        DEFAULT: '#2f5491',
-        500: '#0c377d',
+        DEFAULT: '#322A26',
+        // 500: '#0c377d',
+        // 900: '#032254',
       },
-      'dark-primary': '#0c377d',
-      'font-primary': '#dddddd',
+      secondary: {
+        DEFAULT: '#595F81',
+        500: '#4A506D'
+        // 700: '#4f4f4f' 
+      },
+      tertiary: {
+        DEFAULT: '#cc76a1'
+      },
     },
     extend: {
       colors: {

@@ -1,0 +1,15 @@
+
+services:
+  server:
+    platform: linux/amd64
+    build:
+      context: .
+    image: next
+    container_name: next-co
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+    # volumes:
+    #   - ./public:/usr/src/app/public
+    #   - ./.next:/usr/src/app/.next
